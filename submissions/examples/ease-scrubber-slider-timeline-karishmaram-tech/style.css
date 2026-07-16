@@ -1,22 +1,20 @@
-/* Base Dark Theme Design Variable Presets */
 :root {
-  --bg-color: #0f172a;
-  --panel-bg: #0b0f19;
-  --border-color: #1e293b;
-  --text-primary: #f8fafc;
-  --text-muted: #64748b;
-  --brand-primary: #4f46e5;
-  --brand-hover: #4338ca;
-  --accent-color: #fbbf24;
-  --accent-glow: rgba(251, 191, 36, 0.4);
+  --bg-color: #0b0f19;
+  --panel-bg: #111827;
+  --border-color: #1f2937;
+  --text-primary: #f9fafb;
+  --text-muted: #9ca3af;
+  --brand-primary: #6366f1;
+  --brand-hover: #4f46e5;
+  --accent-color: #f59e0b;
 }
 
 body {
   margin: 0;
-  padding: 40px 20px;
-  background-color: #020617;
+  padding: 20px;
+  background-color: var(--bg-color);
   color: var(--text-primary);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: ui-sans-serif, system-ui, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,356 +22,188 @@ body {
   box-sizing: border-box;
 }
 
-/* Master Timeline Wrapper Block */
 .timeline-container {
   width: 100%;
-  max-width: 850px;
+  max-width: 800px;
   background-color: var(--panel-bg);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
-/* Top Navigation & Controls */
 .control-bar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
   padding-bottom: 16px;
-  border-b: 1px solid var(--border-color);
-  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 20px;
 }
 
 .controls-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 
-/* Button UI styling */
 .btn {
   border: none;
-  border-radius: 8px;
-  padding: 10px 14px;
+  border-radius: 6px;
+  padding: 8px 12px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
-  color: #fff;
+  transition: background-color 0.2s;
 }
 
-.btn-primary {
-  background-color: var(--brand-primary);
-}
+.btn-primary { background-color: var(--brand-primary); color: white; }
+.btn-primary:hover { background-color: var(--brand-hover); }
+.btn-secondary { background-color: #374151; color: var(--text-primary); }
+.btn-secondary:hover { background-color: #4b5563; }
 
-.btn-primary:hover {
-  background-color: var(--brand-hover);
-}
-
-.btn-secondary {
-  background-color: #1e293b;
-  color: var(--text-muted);
-}
-
-.btn-secondary:hover {
-  background-color: #334155;
-  color: var(--text-primary);
-}
-
-/* Time indicator label values */
 .time-display {
   font-family: monospace;
   font-size: 14px;
-  background-color: #020617;
-  padding: 8px 12px;
-  border-radius: 6px;
+  background-color: #030712;
+  padding: 6px 12px;
+  border-radius: 4px;
   border: 1px solid var(--border-color);
 }
+.time-highlight { color: #a5b4fc; }
+.time-divider { color: #4b5563; margin: 0 4px; }
 
-.time-highlight {
-  color: #818cf8;
-}
-
-.time-divider {
-  color: #334155;
-  margin: 0 4px;
-}
-
-/* Easing Curves Preset Buttons list */
-.easing-selectors {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
+.easing-selectors { display: flex; align-items: center; gap: 6px; }
 .curve-label {
   font-size: 11px;
-  font-weight: 700;
   text-transform: uppercase;
   color: var(--text-muted);
   display: flex;
   align-items: center;
   gap: 4px;
-  margin-right: 4px;
 }
-
-.curve-label i {
-  width: 14px;
-  height: 14px;
-}
+.curve-label i { width: 12px; height: 12px; }
 
 .ease-btn {
-  background: rgba(30, 41, 59, 0.5);
+  background: #1f2937;
   border: 1px solid transparent;
-  border-radius: 6px;
-  padding: 6px 12px;
+  border-radius: 4px;
+  padding: 4px 10px;
   font-size: 12px;
-  font-weight: 500;
   color: var(--text-muted);
   cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.2s ease;
 }
-
-.ease-btn:hover {
-  background: #1e293b;
-  color: var(--text-primary);
-}
-
+.ease-btn:hover { background: #374151; color: white; }
 .ease-btn.active {
-  background: rgba(79, 70, 229, 0.15);
+  background: rgba(99, 102, 241, 0.2);
   border-color: var(--brand-primary);
-  color: #a5b4fc;
+  color: #c7d2fe;
 }
 
-/* Graphical Data Display Grid Layout */
 .visual-grid {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 24px;
-  margin-bottom: 24px;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-  .visual-grid {
-    grid-template-columns: 1fr;
-  }
-}
+@media (max-width: 640px) { .visual-grid { grid-template-columns: 1fr; } }
 
-/* SVG Chart Windows */
 .graph-window {
-  background: #020617;
+  background: #030712;
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  height: 160px;
+  height: 150px;
   position: relative;
-  overflow: hidden;
-  padding: 16px;
+  padding: 12px;
 }
 
-#visualizer-svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
+#visualizer-svg { width: 100%; height: 100%; overflow: visible; }
+.grid-line { stroke: #1f2937; stroke-width: 0.5; }
+#curve-path { stroke: var(--brand-primary); stroke-width: 2; fill: none; }
+#tracer-dot { fill: var(--accent-color); }
+.graph-tag { position: absolute; top: 6px; left: 6px; font-size: 9px; color: var(--text-muted); font-family: monospace; }
 
-.grid-line {
-  stroke: #1e293b;
-  stroke-width: 0.75;
-}
-
-#curve-path {
-  stroke: var(--brand-primary);
-  stroke-width: 2.5;
-  fill: none;
-  transition: d 0.3s ease-in-out;
-}
-
-#tracer-dot {
-  fill: var(--accent-color);
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
-}
-
-.graph-tag {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  font-size: 10px;
-  font-family: monospace;
-  color: var(--text-muted);
-}
-
-/* Side Stats Panel Info box */
 .status-panel {
-  background: #020617;
+  background: #030712;
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: 16px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
-.panel-label {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 4px;
-}
-
-.panel-value {
-  font-size: 28px;
-  font-weight: 700;
-  font-family: monospace;
-  color: var(--accent-color);
-}
+.panel-label { font-size: 9px; color: var(--text-muted); text-transform: uppercase; }
+.panel-value { font-size: 24px; font-weight: bold; font-family: monospace; color: var(--accent-color); }
 
 .progress-track {
   width: 100%;
-  height: 12px;
-  background: #1e293b;
-  border-radius: 9999px;
+  height: 8px;
+  background: #1f2937;
+  border-radius: 4px;
   overflow: hidden;
-  border: 1px solid #334155;
-  margin: 12px 0;
 }
+.progress-fill { height: 100%; width: 0%; background: var(--brand-primary); }
+.panel-footer { display: flex; justify-content: space-between; font-size: 9px; color: var(--text-muted); font-family: monospace; }
 
-.progress-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--brand-primary), #a855f7);
-  transition: width 0.075s linear;
-}
-
-.panel-footer {
-  display: flex;
-  justify-content: space-between;
-  font-size: 10px;
-  font-family: monospace;
-  color: var(--text-muted);
-}
-
-/* Bottom Interactive Scrubber Track Bar styling */
-.timeline-track-wrapper {
-  position: relative;
-  padding-top: 12px;
-}
-
+.timeline-track-wrapper { position: relative; }
 .timeline-scrubber-track {
-  height: 32px;
-  background-color: #020617;
+  height: 28px;
+  background-color: #030712;
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 6px;
   position: relative;
   cursor: ew-resize;
-  overflow: hidden;
 }
 
-/* Tick markings across the track */
 .track-ticks {
   position: absolute;
   inset: 0;
   display: flex;
   justify-content: space-between;
-  padding: 0 8px;
+  padding: 0 6px;
   pointer-events: none;
-  opacity: 0.15;
 }
+.tick { width: 1px; background-color: #374151; align-self: flex-end; }
+.tick.long { height: 12px; }
+.tick.short { height: 6px; }
 
-.tick {
-  width: 2px;
-  background-color: #94a3b8;
-  align-self: flex-end;
-}
-
-.tick.long { height: 16px; }
-.tick.short { height: 8px; }
-
-/* Real-time playback highlights */
 .progress-overlay {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  background-color: rgba(79, 70, 229, 0.08);
-  border-right: 1px solid rgba(79, 70, 229, 0.4);
+  top: 0; bottom: 0; left: 0;
+  background-color: rgba(99, 102, 241, 0.1);
+  border-right: 1px solid rgba(99, 102, 241, 0.4);
   pointer-events: none;
 }
 
-/* Target Eased Target Pin Position Indicator Marker */
 .eased-visual-marker {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: rgba(251, 191, 36, 0.4);
+  top: 0; bottom: 0; width: 1px;
+  background-color: rgba(245, 158, 11, 0.3);
   pointer-events: none;
-  left: 0%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transform: translateX(-50%);
 }
+.marker-pulse { width: 6px; height: 6px; border-radius: 50%; background-color: var(--accent-color); }
 
-.marker-pulse {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  box-shadow: 0 0 8px var(--accent-color);
-}
-
-/* Central Active Playhead Handle pointer */
 .playhead {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 2px;
+  top: 0; bottom: 0; width: 1px;
   background-color: var(--brand-primary);
   pointer-events: none;
-  left: 0%;
   transform: translateX(-50%);
-  z-index: 10;
 }
-
 .playhead-icon {
   position: absolute;
-  top: -6px;
-  left: -8px;
-  width: 18px;
-  height: 12px;
+  top: -4px; left: -7px;
+  width: 14px; height: 10px;
   background: var(--brand-primary);
-  border: 1px solid #818cf8;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
 }
+.playhead-icon i { color: white; }
 
-.playhead-icon i {
-  color: #fff;
-}
-
-/* Scrub track bottom captions metadata line */
-.track-axis-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  font-family: monospace;
-  color: var(--text-muted);
-  margin-top: 8px;
-  padding: 0 4px;
-}
-
-.instruction-text {
-  color: #334155;
-}
+.track-axis-labels { display: flex; justify-content: space-between; font-size: 10px; font-family: monospace; color: var(--text-muted); margin-top: 6px; }
+.instruction-text { color: #4b5563; }
